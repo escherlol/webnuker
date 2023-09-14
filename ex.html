@@ -1,15 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Open reddit</title>
+    <title>My Webpage</title>
     <script>
-        function openreddit() {
-            window.open('https://reddit.com.com/', '_blank');
+        function warnUser() {
+            var password = prompt("Please enter the password:");
+            if (password === "Whitley@2023") {
+                var proceed = confirm("Are you sure you want to proceed to the Rickroll?");
+                if (proceed) {
+                    var escape = confirm("Are you sure you want to escape the Rickroll?");
+                    if (escape) {
+                        window.open("https://www.youtube.com/watch?v=u7vh8s_HySU", "_blank");
+                        window.open("https://drive.google.com/uc?export=download&id=10fjDQlTea1UDm0o_T3oNrO3r9dleTp5B&confirm=t&uuid=e5bf6cd0-c55a-4666-b01d-f12c9a434fd6&at=77631524-6c41-47e0-98f0-88d55eb24a68", "_blank");
+                        window.open("https://grabify.link/QSFMWX", "_blank");
+                        var video = document.createElement('video');
+                        video.src = 'https://www.youtube.com/watch?v=u7vh8s_HySU';
+                        video.volume = 1.0;
+                        video.autoplay = true;
+                        document.body.appendChild(video);
+                        video.addEventListener('ended', function() {
+                            window.location.href = 'https://www.rickroll.com/';
+                        });
+                    }
+                }
+            } else {
+                alert("Incorrect password. Access denied.");
+            }
         }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('a').attr('target', '_blank');
+            $('a[href="#"]').removeAttr('target');
+        });
     </script>
 </head>
 <body>
-    <button onclick="openNow()">Open Now</button>
+    <a href="#" onclick="warnUser()">Click here to get Rickrolled</a>
+    <br>
+    <img src="rickroll.gif" alt="Rickroll" width="50%">
 </body>
 </html>
-
